@@ -1,0 +1,29 @@
+@Library('jenkins-rhapsody-libraries@master') _ 
+import com.rh.rhapsody.*;
+
+rhapsodyUtils.standardPipelineProperties();
+
+def cbi = CortexBuildInfo.getCortexBuildInfo("rh-react-micro-template", this);
+
+DockerBuildPipeline pipeline = new DockerBuildPipeline(this, cbi, env, "1.0.0");
+
+pipeline.standardTemplate { label ->
+  node(label) {
+    stage ('Init') {
+      pipeline.checkoutCode();
+    }
+
+    stage('Create Docker images') {
+      pipeline.publishAppImage();
+    }
+
+    stage('Tagging Config') {
+      pipeline.tagConfiguration();
+    } 
+  }
+}
+
+// This is outside of the node (pod)
+stage("promote to Dev") {
+  pipeline.promoteToEnv(pipeline.getImageTag(), Environment.DEV);
+}

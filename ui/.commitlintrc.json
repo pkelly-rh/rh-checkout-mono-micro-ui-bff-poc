@@ -1,0 +1,46 @@
+{
+  "extends": [
+    "@commitlint/config-conventional"
+  ],
+  "rules": {
+    "scope-enum": [
+      2,
+      "always",
+      [
+        "app",
+        "bin",
+        "cdci",
+        "chrome",
+        "data-grid",
+        "deps",
+        "dev",
+        "doc",
+        "docker",
+        "components",
+        "context",
+        "config",
+        "github",
+        "hooks",
+        "index",
+        "integration",
+        "jenkins",
+        "jest",
+        "k8s",
+        "list",
+        "netlify",
+        "nginx",
+        "okta",
+        "package",
+        "prettier",
+        "probes",
+        "react",
+        "release",
+        "router",
+        "test",
+        "typescript",
+        "update",
+        "webpack"
+      ]
+    ]
+  }
+}

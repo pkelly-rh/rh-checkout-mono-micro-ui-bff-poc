@@ -1,0 +1,15 @@
+envVars:
+  OKTA_ISSUER: https://rh.okta.com/oauth2/default
+  OKTA_CLIENT_ID: 0oa1mwzz5b0bidJ4G1d8
+service:
+  name: rh-react-micro-template
+  internalPort: 80
+  apiversion: v1
+  version: 0.0.1
+  livenessProbe:
+    path: /probes/liveness
+  readinessProbe:
+    path: /probes/readiness
+replicaCount: 1
+scaling:
+  enabled: false

@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+  /* background: #333; */
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.lastcolumnSeparator .MuiDataGrid-columnSeparator--sideRight {
+  display: none !important;
+}
+
+.css-1jbbcbn-MuiDataGrid-columnHeaderTitle {
+  font-weight: 1000 !important;
+  text-transform: uppercase !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+/* button */
+::-webkit-scrollbar-button {
+  display: none;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 20px;
+  border-end-end-radius: 20px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #999;
+  border-radius: 20px;
+  border-end-end-radius: 20px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+/* The track NOT covered by the handle.
+::-webkit-scrollbar-track-piece {
+  background: #000; 
+}
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+/* Resizer */
+::-webkit-resizer {
+  background: transparent;
+}

@@ -1,0 +1,17 @@
+version: "3"
+services:
+  rh-react-micro-template:
+    container_name: rh-react-micro-template_build
+    image: rh-react-micro-template_build
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+    ports:
+      - 8080:80 # just for the outside developers to access in their browser with localhost:3002
+      # - 443:443 # Webpack hotreload port
+    environment:
+      - PORT=80
+      - WDS_SOCKET_PORT=4443 # Should be the same as mapped port
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
