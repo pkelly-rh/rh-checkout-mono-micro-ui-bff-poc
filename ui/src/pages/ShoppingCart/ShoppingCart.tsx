@@ -4,15 +4,15 @@ import { useQuery, gql } from '@apollo/client';
 
 
 const queryCart = gql`
-  query Cart {
-    cart (id: "111") {
+  query Cart ($id: String!){
+    cart (id: $id) {
       id
     }
   }
 `
 
 export const ShoppingCart = () => {
-  const {data} = useQuery(queryCart, {variables: {id: "0000"}})
+  const {data} = useQuery(queryCart, {variables: {id: "8a44b8b3-0b22-42b0-a0f0-257c58dd8602"}})
 
 
 
