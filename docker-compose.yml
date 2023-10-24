@@ -1,0 +1,6 @@
+version: '3'
+services:
+  ui:
+    container_name: rh-checkout-v3_ui
+  bff:
+    container_name: rh-checkout-v3_bff

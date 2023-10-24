@@ -1,0 +1,66 @@
+version: '3'
+services:
+  rh-mobile-frontend:
+    container_name: rh-mobile-frontend
+    image: rh-mobile-frontend
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.rh-mobile-frontend
+    ports:
+      - 3002:3002 # just for the outside developers to access in their browser with localhost:xxxx
+      # - 443:443 # Webpack hotreload port
+    environment:
+      - PORT=3002
+      - WDS_SOCKET_PORT=3002 # Should be the same as mapped port
+      - CHOKIDAR_USEPOLLING=true
+    volumes:
+      - ./rh-mobile-frontend/node_modules:/node_modules
+      - ./rh-mobile-frontend/src:/src
+      - ./rh-mobile-frontend/public:/public
+      - ./env/staging/.env.rh-mobile-frontend.staging:/env-config/.env.local
+      - ./env/staging/.env.rh-mobile-frontend.staging:/env-config/.env.development.local
+      - ./rh-mobile-frontend/tsconfig.json:/tsconfig.json
+      - ./mocks/useEnv.tsx:/src/hooks/useEnv.tsx
+      # - ./mocks/ErrorDialogDeGone.tsx:/src/dialogs/ErrorDialog/index.tsx
+    networks:
+      staticnetdk:
+        ipv4_address: 172.16.239.4
+  rh-experience-layer:
+    container_name: rh-experience-layer
+    image: rh-experience-layer
+    build:
+      context: ./
+      dockerfile: ./Dockerfile.rh-experience-layer
+    ports:
+      - 2001:3000
+      - 3000:3000
+    environment:
+      - PORT=3000
+    volumes:
+      - ./rh-experience-layer/src:/src
+      - ./env/staging/.env.rh-experience-layer.staging:/.env
+      - ./rh-experience-layer/node_modules:/node_modules
+      - ./rh-experience-layer/tsconfig.json:/tsconfig.json
+      - ./rh-experience-layer/logs:/logs
+      - ./mocks/logger.ts:/src/logger/logger.ts
+      - ./rh-experience-layer/pacakge.json:/pacakge.json
+    links:
+      - redis
+    networks:
+      staticnetdk:
+        ipv4_address: 172.16.239.2
+  redis:
+    container_name: rh-experience-layer_redis
+    image: redis
+    volumes:
+      - ./redis:/usr/local/etc/redis
+    networks:
+      staticnetdk:
+        ipv4_address: 172.16.239.3
+
+networks:
+  staticnetdk:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.239.0/24
