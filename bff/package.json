@@ -21,8 +21,7 @@
     "test": "npm run compile && npm run unit",
     "coverage": "npm run compile && npm run unit:coverage",
     "release": "standard-version",
-    "publish": "git push --follow-tags && npm publish",
-    "prepare": "husky install"
+    "publish": "git push --follow-tags && npm publish"
   },
   "keywords": [
     "typescript",

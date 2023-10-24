@@ -12,7 +12,6 @@
     "test": "jest",
     "coverage": "npm run test -- --coverage",
     "create-react-app": "node ./scripts/create-react-app.js",
-    "prepare": "husky install",
     "format": "prettier --write .",
     "release": "standard-version"
   },
