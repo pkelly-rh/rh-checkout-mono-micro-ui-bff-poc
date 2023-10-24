@@ -7,9 +7,9 @@ info:
   x-cortex-tag: rh-react-micro-template
   x-cortex-dashboards:
     embeds:
-      - url: https://grafana.rhapsody.rh.com/d-solo/KOgZsyJik/generic-service-dashboard?orgId=1&from=now-24h&to=now&refresh=30s&var-namespace=production&var-service=rh-react-micro-template-v1&panelId=4
+      - url: https://grafana.rhapsody.rh.com/d-solo/KOgZsyJik/generic-service-dashboard?orgId=1&from=now-24h&to=now&refresh=30s&var-namespace=production&var-service=rh-checkout-v3&panelId=4
         type: grafana
-      - url: https://grafana.rhapsody.rh.com/d-solo/KOgZsyJik/generic-service-dashboard?orgId=1&from=now-24h&to=now&refresh=30s&var-namespace=production&var-service=rh-react-micro-template-v1&panelId=11
+      - url: https://grafana.rhapsody.rh.com/d-solo/KOgZsyJik/generic-service-dashboard?orgId=1&from=now-24h&to=now&refresh=30s&var-namespace=production&var-service=rh-checkout-v3&panelId=11
         type: grafana
   x-cortex-static-analysis:
     sonarqube:

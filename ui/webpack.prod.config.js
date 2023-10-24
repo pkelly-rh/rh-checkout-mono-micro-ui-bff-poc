@@ -4,7 +4,7 @@ const defaultConfig = require("./webpack.config.js");
 module.exports = merge(defaultConfig, {
   mode: "production",
   output: {
-    publicPath: "/rh-react-micro-template-v1/",
+    publicPath: "/rh-checkout-v3/",
   },
   optimization: {
     minimize: false,

@@ -1,17 +1,17 @@
-  RH React Micro Template
+  CHECKOUT MICRO FRONTEND GO
 
-RRRRRRRRRRRRRRRRRRRRRRRRRRR
-RRR---------------------R R
-RRR---------------------RRR
-RRR---------------------RRR
-RRR---------------------RRR
-RRR---------------------RRR
-RRR---------------------RRR
-RRRRRRRRRRRRRRRRRRRRRRRRRRR
-RRRRR++++++++++++++++RRRRRR
-RRRRR++RRRRR+++++++++RRRRRR
-RRRRR++RRRRR+++++++++RRRRRR
-RRRRR++RRRRR+++++++++RRRRRR
-RRRRR++++++++++++++++RRRRRR
+BBRRRRRRRRRRRRRRRRRRRRRRRRR
+BBR---------------------R R
+BBR---------------------RRR
+BBR---------------------RRR
+BBR---------------------RRR
+BBR---------------------RRR
+BBR---------------------RRR
+BBRRRRRRRRRRRRRRRRRRRRRRRRR
+BBRRR++++++++++++++++RRRRRR
+BBRRR++RRRRR+++++++++RRRRRR
+BBRRR++RRRRR+++++++++RRRRRR
+BBRRR++RRRRR+++++++++RRRRRR
+BBRRR++++++++++++++++RRRRRR
 
 

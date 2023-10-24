@@ -9,19 +9,19 @@ npm install
 npm run start
 ```
 
-Will run on [http://localhost:3000/rh-react-micro-template-v1](http://localhost:3000/rh-react-micro-template-v1)
+Will run on [http://localhost:3000/rh-checkout-v3](http://localhost:3000/rh-checkout-v3)
 
 # Routes
 
 since this will probably live in rhapsody it will be a sub route on a domain and will not the root.
-So / home will be /rh-react-micro-template-v1 like this
-http://localhost:3000/rh-react-micro-template-v1
+So / home will be /rh-checkout-v3 like this
+http://localhost:3000/rh-checkout-v3
 
 That is because of the way react router works and the site url will be something like this:
-https://staging.internal.rhapsodynonprod.com/rh-react-micro-template-v1/
+https://staging.internal.rhapsodynonprod.com/rh-checkout-v3/
 
 your app will never get the / home route... something with hos rhapsody nginx is setup.
-No worries. Just rename `rh-react-micro-template-v1` to the name of your app and enjoy.
+No worries. Just rename `rh-checkout-v3` to the name of your app and enjoy.
 
 See router.tsx basename.
 
@@ -82,7 +82,7 @@ docker run -dit --rm --name rh-react-micro-template -p 8080:80 rh-react-micro-te
 
 ### Deployment:
 
-[DEPLOYMENT](http://development.internal.rhapsodynonprod.com/rh-react-micro-template-v1)
+[DEPLOYMENT](http://development.internal.rhapsodynonprod.com/rh-checkout-v3)
 
 ### Design:
 

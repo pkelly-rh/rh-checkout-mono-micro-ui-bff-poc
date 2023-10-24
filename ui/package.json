@@ -4,7 +4,7 @@
   "description": "rh-react-micro-template",
   "private": false,
   "main": "build/index.js",
-  "homepage": "/rh-react-micro-template-v1",
+  "homepage": "/rh-checkout-v3",
   "scripts": {
     "start": "./start.sh",
     "build": "webpack --mode production --config ./webpack.prod.config.js",
