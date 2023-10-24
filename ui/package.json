@@ -16,6 +16,7 @@
     "release": "standard-version"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.6",
     "@emotion/react": "11.10.5",
     "@emotion/styled": "11.10.5",
     "@mui/lab": "^5.0.0-alpha.124",
@@ -29,6 +30,7 @@
     "@tanstack/react-query": "^4.28.0",
     "base-64": "^1.0.0",
     "csv-parse": "^5.3.5",
+    "graphql": "^16.8.1",
     "notistack": "^2.0.8",
     "react": "18.2.0",
     "react-dom": "18.2.0",
