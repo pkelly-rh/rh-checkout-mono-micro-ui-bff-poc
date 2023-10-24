@@ -24,3 +24,9 @@ npm run test -- --verbose
 
 supports naming convention: moduleName.test.ts
 Check out [ava](https://github.com/avajs/ava)
+
+
+
+# Limitations
+
+type-graphql@^1.1.1 requires graphql@^15.3.0 not 16

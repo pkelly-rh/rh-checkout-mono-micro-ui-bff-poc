@@ -1,21 +1,53 @@
-'use strict'
-import { build } from './app'
+import { ApolloServer } from '@apollo/server'
+import { startStandaloneServer } from '@apollo/server/standalone'
+import { CartBrokerResolver } from './cart-broker/cartBrokerResolver'
+import {buildSchema} from "type-graphql"
 
-const port = Number(process.env.PORT) || 3000
-
-const server = build({
-  logger: {
-    level: 'info',
-    transport: {
-      target: 'pino-pretty',
-    },
-  },
-})
-
-server.listen({ port }, (err, address) => {
-  if (err) {
-    server.log.error(err)
-    process.exit(1)
+const typeDefs = `#graphql
+  type Book {
+    title: String
+    author: String
   }
-  console.log(`Server is now listening on ${address}`)
-})
+
+  type Query {
+    books: [Book]
+  }
+`
+
+const books = [
+  {
+    title: 'The Awakening',
+    author: 'Kate Chopin',
+  },
+  {
+    title: 'City of Glass',
+    author: 'Paul Auster',
+  },
+]
+
+const resolvers = {
+  Query: {
+    books: () => books,
+  },
+}
+
+// const server = new ApolloServer({
+//   typeDefs,
+//   resolvers,
+// })
+
+async function main () {
+  const schema = await buildSchema({
+    resolvers: [CartBrokerResolver],
+  });
+
+  const server = new ApolloServer({
+    schema
+  })
+
+  const { url } = await startStandaloneServer(server, {
+    listen: { port: 4000 },
+  })
+  console.log(`🚀  Server ready at: ${url}`)
+}
+main()
